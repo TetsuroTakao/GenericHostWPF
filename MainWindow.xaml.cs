@@ -21,17 +21,17 @@ namespace GenericHostWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly IConfiguration Configuration;
         private MainWindowViewModel dataContext = new ();
         private ApplicationContext applicationContext = new();
+        private IConfiguration configRoot;
         public MainWindow(IConfiguration config)
         {
-            Configuration = config;
+            configRoot = config;
             InitializeComponent();
-            Configuration.GetSection(ApplicationContext.English).Bind(applicationContext);
+            config.GetSection(ApplicationContext.Japanese).Bind(applicationContext);
             dataContext = (MainWindowViewModel)this.DataContext;
             dataContext.Message = applicationContext.Brand;
-            dataContext.Log = "test";
+            dataContext.Log = applicationContext.Pages.First().Title;
         }
     }
 }
