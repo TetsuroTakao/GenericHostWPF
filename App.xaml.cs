@@ -17,7 +17,6 @@ namespace GenericHostWPF
         public App()
         {
             _host = Host.CreateDefaultBuilder()
-            // _host = new HostBuilder()
                 .ConfigureAppConfiguration((hostingContext, configuration) =>
                 {
                     configuration.Sources.Clear();
@@ -25,7 +24,6 @@ namespace GenericHostWPF
                     configuration
                         .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                         .AddJsonFile($"appsettings.{env.EnvironmentName}.json", true, true);
-                    IConfigurationRoot configurationRoot = configuration.Build();
                 })
                 .ConfigureServices((context, services) =>
                 {

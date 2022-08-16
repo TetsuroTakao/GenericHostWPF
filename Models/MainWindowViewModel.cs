@@ -27,5 +27,6 @@ public class MainWindowViewModel : INotifyPropertyChanged
                 RaisePropertyChanged();
             }
         }
-        private void RaisePropertyChanged([CallerMemberName] string propertyName = "")=> PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        private void RaisePropertyChanged([CallerMemberName] string propertyName = "")
+            => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
