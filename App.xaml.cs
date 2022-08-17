@@ -29,6 +29,7 @@ namespace GenericHostWPF
                 {
                     services.Configure<ApplicationContext>(context.Configuration);
                     services.AddSingleton<MainWindow>();
+                    // services.AddTransient<MainWindow>();
                 })
                 .Build();
         }
