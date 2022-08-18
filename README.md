@@ -1,2 +1,2 @@
 # GenericHostWPF
- .NET Core WPF application that is initialized as options pattern using .NET generic host
+ .NET Core WPF application that uses the Options Pattern as configuration service registered in the .NET generic host.
